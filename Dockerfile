@@ -31,10 +31,10 @@ RUN pip install --upgrade --no-cache --ignore-installed https://github.com/ipyth
 RUN chown -R $NB_USER /home/$NB_USER
 USER $NB_USER
 # load default extension options
-COPY nbextensions_default.json /home/$NB_USER/.jupyter/nbconfig
-RUN cd /home/$NB_USER/.jupyter/nbconfig && jq -s add notebook.json nbextensions_default.json > new.json && mv new.json notebook.json
+#COPY nbextensions_default.json /home/$NB_USER/.jupyter/nbconfig
+#RUN cd /home/$NB_USER/.jupyter/nbconfig && jq -s add notebook.json nbextensions_default.json > new.json && mv new.json notebook.json
 #jupyter css
-RUN mkdir -p /home/$NB_USER/.jupyter/custom
-COPY custom /home/$NB_USER/.jupyter/custom
+#RUN mkdir -p /home/$NB_USER/.jupyter/custom
+#COPY custom /home/$NB_USER/.jupyter/custom
 # remove token 
 RUN echo "c.NotebookApp.token=''" >>  ~/.jupyter/jupyter_notebook_config.py
