@@ -11,4 +11,5 @@ RUN jupyter nbextension enable hide_input/main
 RUN jupyter nbextension enable hide_input_all/main
 RUN jupyter nbextension enable highlighter/highlighter
 RUN jupyter nbextension enable keyboard_shortcut_editor/main
+RUN jupyter nbextension enable python-markdown/main
 
